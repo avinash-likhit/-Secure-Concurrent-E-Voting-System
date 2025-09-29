@@ -48,7 +48,7 @@ sudo apt install build-essential libssl-dev
    ii. voted_list.txt → Start as an empty file; the server appends votes here
    Example: voters_list.txt
    ```
-Alice,1001
-Bob,1002
-Veer,125
-```
+   Alice,1001
+   Bob,1002
+   Veer,125
+   ```
