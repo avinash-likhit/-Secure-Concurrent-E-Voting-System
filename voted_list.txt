@@ -1,0 +1,8 @@
+john,100,BAT
+man,200,SCORPIO
+Virat,130,ROSE
+Pari,118,SCORPIO
+Aisha,116,ROSE
+Zara,122,CAR
+Anika,120,ROSE
+Viha,129,BAT

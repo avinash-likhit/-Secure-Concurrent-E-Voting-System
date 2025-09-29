@@ -1,0 +1,38 @@
+john,100
+man,200
+broz,400
+Kali Prasad,233
+Raj Kumar,666
+Anupam Kumar,777
+Jai Narain,888
+Kishan Lal,999
+Aarav,101
+Riya,102
+Krish,103
+Ananya,104
+Arjun,105
+Saanvi,106
+Aaradhya,107
+Reyansh,108
+Avani,109
+Aryan,110
+Ishaan,111
+Siya,112
+Kabir,113
+Meera,114
+Vihaan,115
+Aisha,116
+Atharva,117
+Pari,118
+Advik,119
+Anika,120
+Vivaan,121
+Zara,122
+Arnav,123
+Ishika,124
+Veer,125
+Kiara,126
+Shaurya,127
+Navya,128
+Viha,129
+Virat,130
