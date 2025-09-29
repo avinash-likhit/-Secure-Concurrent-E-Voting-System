@@ -35,7 +35,8 @@ int main(void)
     // Confirmed port and IP match server (127.0.0.1:2001)
     server_addr.sin_family = AF_INET;
     server_addr.sin_port = htons(2001);
-    server_addr.sin_addr.s_addr = inet_addr("127.0.0.1");
+    server_addr.sin_addr.s_addr = inet_addr("127.0.0.1");   //comment this line and uncomment the next line for device to device connection
+    //server_addr.sin_addr.s_addr = inet_addr("YOUR_SERVER_IP");   //Add the IP address of the server device
 
     if (connect(socket_desc, (struct sockaddr *)&server_addr, sizeof(server_addr)) < 0) {
         printf("Unable to connect\n");
