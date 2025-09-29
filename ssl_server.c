@@ -11,7 +11,7 @@
 
 #define MAX_LENGTH 100
 
-// --- MUTEX REMOVED ---
+// --- For MUTEX if race conditions  ---
 
 int checkNameAndID(const char *filename, const char *search_name, const char *search_id) {
     FILE *file = fopen(filename, "r");
@@ -241,7 +241,8 @@ int main() {
 
     server_addr.sin_family = AF_INET;
     server_addr.sin_port = htons(2001); 
-    server_addr.sin_addr.s_addr = inet_addr("127.0.0.1");
+    server_addr.sin_addr.s_addr = inet_addr("127.0.0.1"); //comment this line and uncomment the next line for device to device connection
+    //server_addr.sin_addr.s_addr = inet_addr("0.0.0.0");   
 
     if (bind(socket_desc, (struct sockaddr *)&server_addr, sizeof(server_addr)) < 0) {
         printf("Couldn't bind to the port\n");
