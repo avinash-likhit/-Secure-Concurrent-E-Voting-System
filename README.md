@@ -35,7 +35,8 @@ You need a **Unix-like environment** (Linux/Ubuntu assumed) and the following li
 
 ```bash
 sudo apt update
-sudo apt install build-essential libssl-dev```
+sudo apt install build-essential libssl-dev
+```bash
 
 
 
