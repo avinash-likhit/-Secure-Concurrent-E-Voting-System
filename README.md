@@ -69,3 +69,36 @@ openssl genrsa -out server.key 2048
 
 # Generate self-signed certificate (valid for 365 days)
 openssl req -new -x509 -key server.key -out server.crt -days 365 -nodes -subj "/CN=localhost/O=VotingApp"
+```
+
+### 3. Compilation
+
+Compile both the **server** and **client**, linking the required libraries (`-lssl -lcrypto -lpthread`).
+
+```bash
+# Compile the server (in separate device or terminal)
+gcc ssl_server.c -o ssl_server -lssl -lcrypto -lpthread
+
+# Compile the client (in separate device or terminal)
+gcc ssl_client.c -o ssl_client -lssl -lcrypto
+```
+
+### 4. Execution
+
+Run the server and client in **separate terminal windows**.
+
+#### Terminal 1 → Start the Server (listens on `127.0.0.1:2001`)
+
+```bash
+./ssl_server
+```
+
+#### Terminal 2 → Run the Client
+
+```bash
+./ssl_client
+```
+
+👉 The client will prompt for credentials. Use a Name,ID pair from voters_list.txt.
+
+
