@@ -6,7 +6,7 @@ This repository hosts a secure, multi-threaded client-server application designe
 # 🗳️ Secure Concurrent E-Voting System
 
 This project implements a secure client-server application for an electronic voting system.  
-The **server** is built using **C** and **Pthreads** for high concurrency and uses **OpenSSL** to secure all communication with **SSL/TLS encryption**.  
+The **TCP server** is built using **C** and **Pthreads** for high concurrency and uses **OpenSSL** to secure all communication with **SSL/TLS encryption**.  
 It employs a **double-check validation mechanism** to minimize the risk of a single voter casting multiple ballots.
 
 ---
@@ -16,7 +16,6 @@ It employs a **double-check validation mechanism** to minimize the risk of a sin
 - 🔒 **SSL/TLS Security**: Encrypts all voter credentials and vote submissions using the OpenSSL library.  
 - ⚡ **High Concurrency**: Utilizes Pthreads to handle multiple clients simultaneously.  
 - ✅ **Double-Check Validation**: Implements a two-stage check against `voted_list.txt` to mitigate race conditions and prevent double-voting in a highly concurrent environment.  
-- 🌐 **Robust Networking**: Uses the `SO_REUSEADDR` socket option for quick server restarts.  
 - 📂 **Simple File-Based Storage**:  
   - Voter eligibility stored in `voters_list.txt`.  
   - Voting results stored in `voted_list.txt`.  
@@ -36,7 +35,7 @@ You need a **Unix-like environment** (Linux/Ubuntu assumed) and the following li
 
 ```bash
 sudo apt update
-sudo apt install build-essential libssl-dev'''
+sudo apt install build-essential libssl-dev```
 
 
 
