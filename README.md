@@ -33,10 +33,10 @@ You need a **Unix-like environment** (Linux/Ubuntu assumed) and the following li
 
 ### Install required tools on Ubuntu:
 
-'''bash
+```bash
 sudo apt update
 sudo apt install build-essential libssl-dev
-'''
+```
 
 
 
