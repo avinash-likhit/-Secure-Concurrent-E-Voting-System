@@ -102,3 +102,12 @@ Run the server and client in **separate terminal windows**.
 👉 The client will prompt for credentials. Use a Name,ID pair from voters_list.txt.
 
 
+## 💻 Technical Details
+
+| Component       | Technology         | Description                                                                 |
+|------------------|--------------------|-----------------------------------------------------------------------------|
+| **Server**      | C, Pthreads       | Multi-threaded design to manage concurrent voters.                         |
+| **Security**    | OpenSSL (SSL/TLS) | Encrypts network traffic over port 2001.                                   |
+| **Server Addr** | 127.0.0.1:2001    | Default binding address (can be changed in code for external access).      |
+| **Concurrency** | Double-Check Logic| Eligibility check after credentials and final check before vote submission.|
+
