@@ -106,8 +106,42 @@ Run the server and client in **separate terminal windows**.
 
 | Component       | Technology         | Description                                                                 |
 |------------------|--------------------|-----------------------------------------------------------------------------|
-| **Server**      | C, Pthreads       | Multi-threaded design to manage concurrent voters.                         |
+| **Server**      | C, Pthreads,TCP   | Multi-threaded design to manage concurrent voters.                         |
 | **Security**    | OpenSSL (SSL/TLS) | Encrypts network traffic over port 2001.                                   |
 | **Server Addr** | 127.0.0.1:2001    | Default binding address (can be changed in code for external access).      |
 | **Concurrency** | Double-Check Logic| Eligibility check after credentials and final check before vote submission.|
+
+
+
+## 📊 File Structure
+
+project/
+├── ssl_server.c # Server source code
+├── ssl_client.c # Client source code
+├── voters_list.txt # List of eligible voters (Name,ID)
+├── voted_list.txt # Stores votes (generated at runtime)
+├── server.key # SSL private key (generated)
+└── server.crt # SSL certificate (generated)
+
+
+## 🌐 Running Across a Local Network
+
+To run the client and server on different machines (device-to-device), you must change the hardcoded IP addresses in the source code.
+
+1.  **Find Server IP:** Determine the local IP address of the server machine (e.g., `192.168.1.100`) by running `ip a` in its terminal.
+2.  **Server Change (`ssl_server.c`):** Change the bind address from `127.0.0.1` to `0.0.0.0` (to listen globally).
+3.  **Client Change (`ssl_client.c`):** Change the connect address from `127.0.0.1` to the **actual Server IP** found in Step 1.
+
+All devices must be on the same local network for the connection to succeed.
+
+
+
+---
+
+## 📝 Notes
+
+- Make sure `voters_list.txt` exists before running the server.  
+- `voted_list.txt` will be created automatically if not present.  
+- For real-world deployment, replace the self-signed certificate with a CA-signed certificate.
+
 
