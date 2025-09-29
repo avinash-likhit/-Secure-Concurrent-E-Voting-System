@@ -115,6 +115,7 @@ Run the server and client in **separate terminal windows**.
 
 ## 📊 File Structure
 
+```
 project/
 ├── ssl_server.c # Server source code
 ├── ssl_client.c # Client source code
@@ -122,7 +123,7 @@ project/
 ├── voted_list.txt # Stores votes (generated at runtime)
 ├── server.key # SSL private key (generated)
 └── server.crt # SSL certificate (generated)
-
+```
 
 ## 🌐 Running Across a Local Network
 
