@@ -41,14 +41,31 @@ sudo apt install build-essential libssl-dev
 
 
 
-🚀 Getting Started
-1. Setup Data Files
-   Create the following files in your project directory:
-   -  voters_list.txt → List of eligible voters (Name,ID)
-   - voted_list.txt → Start as an empty file; the server appends votes here
-  - Example: voters_list.txt
-   ```
-   Alice,1001
-   Bob,1002
-   Veer,125
-   ```
+## 🚀 Getting Started
+
+### 1. Setup Data Files
+
+Create the following files in your project directory:
+
+- `voters_list.txt` → List of eligible voters (`Name,ID`)  
+- `voted_list.txt` → Start as an empty file; the server appends votes here  
+
+**Example: voters_list.txt**
+
+```txt
+Alice,1001
+Bob,1002
+Veer,125
+```
+
+
+### 2. Generate SSL Certificate and Key
+
+The server requires a **self-signed certificate** (`server.crt`) and **private key** (`server.key`) for the SSL handshake.
+
+```bash
+# Generate private key
+openssl genrsa -out server.key 2048
+
+# Generate self-signed certificate (valid for 365 days)
+openssl req -new -x509 -key server.key -out server.crt -days 365 -nodes -subj "/CN=localhost/O=VotingApp"
