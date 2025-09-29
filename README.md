@@ -43,15 +43,12 @@ sudo apt install build-essential libssl-dev
 
 🚀 Getting Started
 1. Setup Data Files
-
-Create the following files in your project directory:
-
-voters_list.txt → List of eligible voters (Name,ID)
-
-voted_list.txt → Start as an empty file; the server appends votes here
-
-Example: voters_list.txt
-
+   Create the following files in your project directory:
+   i.  voters_list.txt → List of eligible voters (Name,ID)
+   ii. voted_list.txt → Start as an empty file; the server appends votes here
+   Example: voters_list.txt
+   ```
 Alice,1001
 Bob,1002
 Veer,125
+```
